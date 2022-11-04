@@ -1,0 +1,654 @@
+<!DOCTYPE HTML>
+<!--
+	Massively by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Projects - Yiling Kang</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<a href="index.html" class="logo">Welcome</a>
+					</header>
+
+				<!-- Nav -->
+					<nav id="nav">
+						<ul class="links">
+							<li><a href="index.html">Home</a></li>
+							<li class="active"><a href="generic.html">Projects</a></li>
+							<li><a href="elements.html">About Me</a></li>
+						</ul>
+						<ul class="icons">
+							<li><a href="https://www.linkedin.com/in/yiling-kang-09531422a/" class="icon brands fa-linkedin"><span class="label">Linkedin</span></a></li>
+							<li><a href="https://github.com/Vkang10" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+						</ul>
+					</nav>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Post -->
+							<section class="post">
+								<header class="major">
+									<h1>L’OREAL Eye-Movement<br />
+										Data Analysis</h1>
+									<h3>(SAS, Excel)</p>
+								</header>
+								<div class="image main"><img src="images/2.jpg" alt="" /></div>
+								<h3>Executive Summary</h3>
+								<p>The main objective of this project is to analyze the factors that will improve the recall accuracy for L’Oreal. We built two <b>Poisson models</b> on SAS to estimate the influence on brand and pictorial fixation and a <b>binary logit model</b> to test the influence on the recall accuracy. Our model in Excel recommends that the predicted value of the recall accuracy increase to 0.398 after increasing brand element’s size and pictorial elements’ size, putting ads on the right side of the last page of the magazine. </p>
+								<h3>Introduction and Background</h3>
+								<p>Founded in 1909, for over a century, L’Oreal has been dedicated to one sole vocation: creating beauty. As the No.1 Cosmetics Group Worldwide, according to the 2020 Annual Report[1], L’Oreal has created 32.47 Billion dollars of sales in 2020 and generated about 6 billion dollars in operating profits. For the L'Oreal Marketing Department, due to its vital importance of promotion, advertising is always the top priority. However, in a complicated media bombard environment, it is a big challenge for ads to attract consumers’ attention.</p>
+								<p>Through the analysis of eye-tracking data, such as fixation count and surface size, this project is to evaluate the effectiveness of the design of the printed ads of L’Oreal compared with other brands' ads and whether it can attract people’s attention and generate a durable memory of the brand. Finally, based on findings in our research, we present some recommendations about how to actively improve the effectiveness of L’Oreal’s ads.</p>
+								<h3>Data and Methodology</h3>
+								<p>We use SAS to analyze the dataset of eye tracking movements, including 88 participants and 35 different advertisements, to help improve the performance of L’Oreal’s ads. Firstly, we calculate the means to understand the overall situation of the data, and generate the correlation to make sure which elements will be related to the brand and pictorial fixation. Then we use GLM( Generalized Linear Models) as our final model in SAS to analyze variables’ relationships because the count data like brand fixation and pictorial fixation follows the Poisson distribution, while dependent variable recall accuracy follows the Binomial distribution. Finally, we exclude several irrelevant variables, and choose the optimized model with the greatest BIC(4070.328)(Table 15). Using the parameters in excel to search for the most suitable pictorial and brand size of L’Oreal to enhance the fixation and improving L’Oreal recall accuracy based on that.</p>
+								<h3>Key Findings</h3>
+								<p>Through the histogram, we understand the preferences of all brands for advertising in magazines. It shows that most brands choose to use large pictorial surface size and tiny brand size(Table 6&7). The average of brand elements size is 6.881 inches2, while that of pictorial elements size is 67.513 inches2. Meanwhile, the page number distribution shows that there are more ads in the first half of the magazine.(Table 5) Additionally, brands also have a preference for the placement, 57.14% of all ads placed on the right page. Thus, we think these preferences due to their effects on the fixation and calculate their correlations. (Consider brand/ pictorial elements as continuous variable)</p>
+								<li>Surface Size of Brand Element: the correlation coefficient between brand fixation and brand surface size(0.35) shows that they have a medium positive relationship(Table 8)</li>
+								<li>Surface Size of Pictorial Element: the correlation(0.20) indicates that surface size of pictorial elements has a statistically significant positive relationship with pictorial fixation(Table 9)</li>
+								<li>Page Number of Ads: the correlation coefficient indicates that page number has positive effects on brand and pictorial fixation(Table 8&9). Combined with page distribution estimation, we assume that people may pay more attention to the ads close to the end of the magazine.</li>
+								<p></p>
+								<p>And for the page position, the average fixation time of brand (2.20) and pictorial (5.03) on the right page is higher than the left side(brand fix:1.07 pic fix:4.75)(Table 3). It indicates that the fixation time will be much longer, if brand and pictorial elements on the right page. In addition, the higher means of recall accuracy on the right page shows that the page position may have a positive influence on the probability of recall(Table 4). Based on observations above, we build Poisson regression and binary logit model to evaluate the different effects. (All the specific interception of coefficients are in Table 2)</p>
+								<div class="image fit"><img src="images/21.jpg" alt="" /></div>
+								<h4>1.Surface Size of Brand& Pictorial Element:</h4> In further analysis of model 1, we conclude that brand surface size has a statistically significant effect on brand fixation.(Table 11)</p>
+								<h4>2.Surface Size of Pictorial Element:</h4> Compared with pictorial surface size’s effect on pictorial fixation, brand surface size’s effect on brand fixation is stronger(Table 12). So keeping a large pictorial size and increasing brand surface size will be a creative way to improve the fixation time. </p>
+								<h4>3. Page Position of Ads:</h4> In the further analysis of recall time, people recall more accurately with ads in a bigger page number, so we speculate that page number contributes to recall accuracy probability positively(Table 15), due to reading habit and less competitiveness with other ads.</p>
+								<h4>4.Length of the Brand Name:</h4> As we consider brand length may affect the fixation time of brand elements, we put it in model 1 and the result shows that the effect is statistically significant(Table 11). So we can conclude that longer brand names will reduce the fixation time of brand elements.</p>
+								<h4>5.Effectiveness of L’Oreal ad on attention:</h4> We put the loreal variable in model 1&2 to generate its performance compared with other brands. Consequently, we find that L’Oreal ads have poor performance on getting respondents’ attention to brand and pictorial elements, and lag behind more on brand elements(Table 11&12). We also compared the L’oreal recall accuracy and find participants have less memory of the L'Oreal than other brands.(Table 15)</p>
+								<h4>6.Fixation Count of the Brand and Pictorial Element:</h4> The result indicates that both brand and pictorial elements have positive statistically significant effects on recall accuracy, which means that people will recall more accurately if they pay more attention to brand and pictorial elements. </p>
+								<h4>7.the Time of Brand Recall Question:</h4> The forgetting curve hypothesizes the decline of memory retention in time[2], so we assume recall time may affect the recall accuracy in a nonlinear way. Thus, we built two models(3-1&3-2), put only recall time and recallTime, recallTime square simultaneously. Compared BIC of two models(3-1:4086 3-2:4083), we reject the assumption that RecallTime’s effect is not linear(Table 14). The final result shows that shorter recall time contributes to higher probability of recall accuracy.</p>
+								<h4>8.Other:</h4> Considering that brand name length might interact with brand recall time and affect recall accuracy, we add variables BrandLength and BrandLength*RecallTime into binary logit model 3- 1. However, we drop off these variables because they are statistically insignificant(p-value>0.05) so it is hard to say they have a relationship with recall time.(Table 13)</p>
+								<h3>Conclusions and Recommendations</h3>
+								<p>According to our research, we recommend that L’Oreal could do the following things to improve their advertisement recall accuracy:
+									<li><b>Increasing their brand elements’ size in advertisements.</b></li>
+									<li><b>Expanding the advertisements’ pictorial elements’ size.</b></li>
+									<li><b>Putting their advertisements on the right page of the magazine.</b></li>
+									<li><b>Setting the advertisements on the end of the magazine.</b></li>
+								<p></p>We calculate the optimal brand fixation(2.441)(Table 18) and pictorial fixation(6.004)(Table 18), using the parameters from our poisson regression model. And finally, we find the predicted value increased to 0.398(Table 18) by our binary logit model.
+									The limitation of our model is that we cannot control some variables like recall time, so we choose to use the average time of all brands, while the real recall time may be different. Additionally, there are also some other limitations, for example, elements not in the dataset like colors, slogans will also affect advertisements. What’s more, the data came from one experiment, which might lead to some contingency. If we could access more data and have more time to analyse, we might get a more accurate model and come up with more useful advice for L’Oreal.</p>
+								<!-- Preformatted Code -->
+								<h3>Model</h3>
+								<pre><code>/* Poisson Regression Models */
+
+/* For BRAND_FIX: fixation counts of the brand element */ 
+proc genmod data=temp;
+     model brand_fix=brand_size page_pos page_num loreal brandlength/
+           dist=poisson link=log;
+     title 'Poission Regression for brand fixation count';
+
+/* For PIC_FIX: fixation counts of the pictorial element */ 
+proc genmod data=temp;
+     model pic_fix=pic_size page_pos page_num loreal/
+           dist=poisson link=log;
+     title 'Poission Regression for pictorial fixation count';
+
+/* Binary Logit Model */
+proc genmod data=temp descending;
+     model recall_accu=brand_fix pic_fix page_pos page_num loreal RECALL_TIME/
+	       dist=binomial link=logit;
+     title 'Binary Logit Model for Recall Accuracy = 1';
+run;
+</code></pre>
+
+<h3>Appendices</h3>
+<style type="text/css">
+	.tg  {border-collapse:collapse;border-spacing:0;}
+	.tg td{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+	  overflow:hidden;padding:10px 5px;word-break:normal;}
+	.tg th{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+	  font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
+	.tg .tg-0goy{color:#212931;font-weight:bold;text-align:center;vertical-align:top}
+	.tg .tg-1vzr{background-color:rgba(220, 220, 220, 0.25);color:#212931;text-align:left;vertical-align:top}
+	.tg .tg-dfa9{color:#212931;text-align:left;vertical-align:top}
+	</style>
+	<table class="tg">
+	<thead>
+	  <tr>
+		<th class="tg-0goy"><span style="font-weight:700;font-style:normal;text-decoration:none;color:#000;background-color:transparent">VARIABLES</span></th>
+		<th class="tg-0goy"><span style="font-weight:700;font-style:normal;text-decoration:none;color:#000;background-color:transparent">INTERPRETATION OF VARIABLES</span></th>
+	  </tr>
+	</thead>
+	<tbody>
+	  <tr>
+		<td class="tg-1vzr"><span style="font-weight:inherit;font-style:inherit">RESPONDENT_ID</span></td>
+		<td class="tg-1vzr"><span style="font-weight:inherit;font-style:inherit">ID number of a respondent</span></td>
+	  </tr>
+	  <tr>
+		<td class="tg-dfa9"><span style="font-weight:inherit;font-style:inherit">ad_id</span></td>
+		<td class="tg-dfa9"><span style="font-weight:inherit;font-style:inherit">ID number of an ad</span></td>
+	  </tr>
+	  <tr>
+		<td class="tg-1vzr"><span style="font-weight:inherit;font-style:inherit">brand</span></td>
+		<td class="tg-1vzr"><span style="font-weight:inherit;font-style:inherit">Brand name of the product in an ad (a character variable)</span></td>
+	  </tr>
+	  <tr>
+		<td class="tg-dfa9"><span style="font-weight:inherit;font-style:inherit">page_num</span></td>
+		<td class="tg-dfa9"><span style="font-weight:inherit;font-style:inherit">Page number in the magazine where an ad appears (1,2,3,…)</span></td>
+	  </tr>
+	  <tr>
+		<td class="tg-1vzr"><span style="font-weight:inherit;font-style:inherit">page_pos</span></td>
+		<td class="tg-1vzr"><span style="font-weight:inherit;font-style:inherit">The right-side vs. left-side position on a page, 1 = right, 0 = left</span></td>
+	  </tr>
+	  <tr>
+		<td class="tg-dfa9"><span style="font-weight:inherit;font-style:inherit">brand_fix</span></td>
+		<td class="tg-dfa9"><span style="font-weight:inherit;font-style:inherit">Fixation count of the brand element (0, 1, 2, 3, …)</span></td>
+	  </tr>
+	  <tr>
+		<td class="tg-1vzr"><span style="font-weight:inherit;font-style:inherit">pic_fix</span></td>
+		<td class="tg-1vzr"><span style="font-weight:inherit;font-style:inherit">Fixation count of the pictorial element (0, 1, 2, 3, …)</span></td>
+	  </tr>
+	  <tr>
+		<td class="tg-dfa9"><span style="font-weight:inherit;font-style:inherit">brand_size</span></td>
+		<td class="tg-dfa9"><span style="font-weight:inherit;font-style:inherit">Surface size of the brand element, in inches2</span></td>
+	  </tr>
+	  <tr>
+		<td class="tg-1vzr"><span style="font-weight:inherit;font-style:inherit">pic_size</span></td>
+		<td class="tg-1vzr"><span style="font-weight:inherit;font-style:inherit">Surface size of the pictorial element, in inches2</span></td>
+	  </tr>
+	  <tr>
+		<td class="tg-dfa9"><span style="font-weight:inherit;font-style:inherit">recall_accu</span></td>
+		<td class="tg-dfa9"><span style="font-weight:inherit;font-style:inherit">Whether a respondent accurately recalls the brand name, 1= yes, 0 = no</span></td>
+	  </tr>
+	  <tr>
+		<td class="tg-1vzr"><span style="font-weight:inherit;font-style:inherit">recall_time</span></td>
+		<td class="tg-1vzr"><span style="font-weight:inherit;font-style:inherit">The time it takes a respondent to answer the brand recall question, in seconds</span></td>
+	  </tr>
+	  <tr>
+		<td class="tg-dfa9"><span style="font-weight:inherit;font-style:inherit">brandlength</span></td>
+		<td class="tg-dfa9"><span style="font-weight:inherit;font-style:inherit">The number of letters in brand names(0, 1, 2, 3, …), for example brandlength of ‘LOreal’=6</span> </td>
+	  </tr>
+	</tbody>
+	</table>
+	<h4>Poission Regression for brand fixation count</h4>
+	<style type="text/css">
+		.tg  {border-collapse:collapse;border-spacing:0;}
+		.tg td{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+		  overflow:hidden;padding:10px 5px;word-break:normal;}
+		.tg th{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+		  font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
+		.tg .tg-u8wk{background-color:#ffffff;color:#000000;text-align:center;vertical-align:bottom}
+		.tg .tg-kuuz{background-color:#ffffff;color:#000000;font-weight:bold;text-align:center;vertical-align:bottom}
+		</style>
+		<table class="tg" style="undefined;table-layout: fixed; width: 413px">
+		<colgroup>
+		<col style="width: 92px">
+		<col style="width: 121px">
+		<col style="width: 200px">
+		</colgroup>
+		<tbody>
+		  <tr>
+			<th class="tg-kuuz" colspan="3">Criteria For Assessing Goodness Of Fit</th>
+		  </tr>
+		  <tr>
+			<td class="tg-kuuz" colspan="2">Log   Likelihood</td>
+			<td class="tg-u8wk">-1533.894</td>
+		  </tr>
+		  <tr>
+			<td class="tg-kuuz" colspan="2">Full   Log Likelihood</td>
+			<td class="tg-u8wk">-6415.8549</td>
+		  </tr>
+		  <tr>
+			<td class="tg-kuuz" colspan="2">AIC   (smaller is better)</td>
+			<td class="tg-u8wk">12843.7098</td>
+		  </tr>
+		  <tr>
+			<td class="tg-kuuz" colspan="2">AICC   (smaller is better)</td>
+			<td class="tg-u8wk">12843.7371</td>
+		  </tr>
+		  <tr>
+			<td class="tg-kuuz" colspan="2">BIC   (smaller is better)</td>
+			<td class="tg-u8wk">12879.9059</td>
+		  </tr>
+		</tbody>
+		</table>
+		<style type="text/css">
+			.tg  {border-collapse:collapse;border-spacing:0;}
+			.tg td{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+			  overflow:hidden;padding:10px 5px;word-break:normal;}
+			.tg th{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+			  font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
+			.tg .tg-zxgo{background-color:#FFF;color:#212931;text-align:left;vertical-align:bottom}
+			.tg .tg-5j92{background-color:#FFF;color:#212931;text-align:center;vertical-align:bottom}
+			.tg .tg-7j07{background-color:#ffffff;color:#000000;font-weight:bold;text-align:left;vertical-align:bottom}
+			.tg .tg-4bam{background-color:#FFF;text-align:center;vertical-align:bottom}
+			.tg .tg-kuuz{background-color:#ffffff;color:#000000;font-weight:bold;text-align:center;vertical-align:bottom}
+			.tg .tg-kgx5{background-color:#FFF;color:#212931;font-weight:bold;text-align:left;vertical-align:bottom}
+			</style>
+			<table class="tg">
+			<tbody>
+			  <tr>
+				<th class="tg-kuuz" colspan="8">Analysis Of Maximum Likelihood Parameter Estimates</th>
+			  </tr>
+			  <tr>
+				<td class="tg-7j07" rowspan="2">Parameter</td>
+				<td class="tg-7j07" rowspan="2">DF</td>
+				<td class="tg-kuuz" rowspan="2">Estimate</td>
+				<td class="tg-kuuz" rowspan="2">Standard Error</td>
+				<td class="tg-kuuz" colspan="2" rowspan="2">Wald 95% Confidence Limits</td>
+				<td class="tg-kuuz" rowspan="2">Wald Chi-Square</td>
+				<td class="tg-kuuz" rowspan="2">Pr &gt; ChiSq</td>
+			  </tr>
+			  <tr>
+			  </tr>
+			  <tr>
+				<td class="tg-kgx5"><span style="font-weight:bold;font-style:inherit;color:#000;background-color:#FFF">Intercept</span></td>
+				<td class="tg-zxgo"><span style="font-weight:inherit;font-style:inherit;color:#000;background-color:#FFF">1</span></td>
+				<td class="tg-5j92"><span style="font-weight:inherit;font-style:inherit;color:#000;background-color:#FFF">-0.2169</span></td>
+				<td class="tg-5j92"><span style="font-weight:inherit;font-style:inherit;color:#000;background-color:#FFF">0.0537</span></td>
+				<td class="tg-5j92"><span style="font-weight:inherit;font-style:inherit;color:#000;background-color:#FFF">-0.3222</span></td>
+				<td class="tg-5j92"><span style="font-weight:inherit;font-style:inherit;color:#000;background-color:#FFF">-0.1117</span></td>
+				<td class="tg-5j92"><span style="font-weight:inherit;font-style:inherit;color:#000;background-color:#FFF">16.32</span></td>
+				<td class="tg-5j92"><span style="font-weight:inherit;font-style:inherit;color:#000;background-color:#FFF">&lt;.0001</span></td>
+			  </tr>
+			  <tr>
+				<td class="tg-kgx5"><span style="font-weight:bold;font-style:inherit;color:#000;background-color:#FFF">brand_size</span></td>
+				<td class="tg-zxgo"><span style="font-weight:inherit;font-style:inherit;color:#000;background-color:#FFF">1</span></td>
+				<td class="tg-5j92"><span style="font-weight:inherit;font-style:inherit;color:#000;background-color:#FFF">0.0663</span></td>
+				<td class="tg-5j92"><span style="font-weight:inherit;font-style:inherit;color:#000;background-color:#FFF">0.002</span></td>
+				<td class="tg-5j92"><span style="font-weight:inherit;font-style:inherit;color:#000;background-color:#FFF">0.0625</span></td>
+				<td class="tg-5j92"><span style="font-weight:inherit;font-style:inherit;color:#000;background-color:#FFF">0.0702</span></td>
+				<td class="tg-5j92"><span style="font-weight:inherit;font-style:inherit;color:#000;background-color:#FFF">1142.9</span></td>
+				<td class="tg-5j92"><span style="font-weight:inherit;font-style:inherit;color:#000;background-color:#FFF">&lt;.0001</span></td>
+			  </tr>
+			  <tr>
+				<td class="tg-kgx5"><span style="font-weight:bold;font-style:inherit;color:#000;background-color:#FFF">page_pos</span></td>
+				<td class="tg-zxgo"><span style="font-weight:inherit;font-style:inherit;color:#000;background-color:#FFF">1</span></td>
+				<td class="tg-5j92"><span style="font-weight:inherit;font-style:inherit;color:#000;background-color:#FFF">0.5858</span></td>
+				<td class="tg-5j92"><span style="font-weight:inherit;font-style:inherit;color:#000;background-color:#FFF">0.0321</span></td>
+				<td class="tg-5j92"><span style="font-weight:inherit;font-style:inherit;color:#000;background-color:#FFF">0.5228</span></td>
+				<td class="tg-5j92"><span style="font-weight:inherit;font-style:inherit;color:#000;background-color:#FFF">0.6488</span></td>
+				<td class="tg-5j92"><span style="font-weight:inherit;font-style:inherit;color:#000;background-color:#FFF">332.13</span></td>
+				<td class="tg-5j92"><span style="font-weight:inherit;font-style:inherit;color:#000;background-color:#FFF">&lt;.0001</span></td>
+			  </tr>
+			  <tr>
+				<td class="tg-kgx5"><span style="font-weight:bold;font-style:inherit;color:#000;background-color:#FFF">page_num</span></td>
+				<td class="tg-zxgo"><span style="font-weight:inherit;font-style:inherit;color:#000;background-color:#FFF">1</span></td>
+				<td class="tg-5j92"><span style="font-weight:inherit;font-style:inherit;color:#000;background-color:#FFF">0.0008</span></td>
+				<td class="tg-5j92"><span style="font-weight:inherit;font-style:inherit;color:#000;background-color:#FFF">0.0004</span></td>
+				<td class="tg-5j92"><span style="font-weight:inherit;font-style:inherit;color:#000;background-color:#FFF">0</span></td>
+				<td class="tg-5j92"><span style="font-weight:inherit;font-style:inherit;color:#000;background-color:#FFF">0.0015</span></td>
+				<td class="tg-5j92"><span style="font-weight:inherit;font-style:inherit;color:#000;background-color:#FFF">4.26</span></td>
+				<td class="tg-5j92"><span style="font-weight:inherit;font-style:inherit;color:#000;background-color:#FFF">0.039</span></td>
+			  </tr>
+			  <tr>
+				<td class="tg-kgx5"><span style="font-weight:bold;font-style:inherit;color:#000;background-color:#FFF">loreal</span></td>
+				<td class="tg-zxgo"><span style="font-weight:inherit;font-style:inherit;color:#000;background-color:#FFF">1</span></td>
+				<td class="tg-5j92"><span style="font-weight:inherit;font-style:inherit;color:#000;background-color:#FFF">-1.0604</span></td>
+				<td class="tg-5j92"><span style="font-weight:inherit;font-style:inherit;color:#000;background-color:#FFF">0.1459</span></td>
+				<td class="tg-5j92"><span style="font-weight:inherit;font-style:inherit;color:#000;background-color:#FFF">-1.3463</span></td>
+				<td class="tg-5j92"><span style="font-weight:inherit;font-style:inherit;color:#000;background-color:#FFF">-0.7744</span></td>
+				<td class="tg-5j92"><span style="font-weight:inherit;font-style:inherit;color:#000;background-color:#FFF">52.81</span></td>
+				<td class="tg-5j92"><span style="font-weight:inherit;font-style:inherit;color:#000;background-color:#FFF">&lt;.0001</span></td>
+			  </tr>
+			  <tr>
+				<td class="tg-kgx5"><span style="font-weight:bold;font-style:inherit;color:#000;background-color:#FFF">brandlength</span></td>
+				<td class="tg-zxgo"><span style="font-weight:inherit;font-style:inherit;color:#000;background-color:#FFF">1</span></td>
+				<td class="tg-5j92"><span style="font-weight:inherit;font-style:inherit;color:#000;background-color:#FFF">-0.0314</span></td>
+				<td class="tg-5j92"><span style="font-weight:inherit;font-style:inherit;color:#000;background-color:#FFF">0.0074</span></td>
+				<td class="tg-5j92"><span style="font-weight:inherit;font-style:inherit;color:#000;background-color:#FFF">-0.0459</span></td>
+				<td class="tg-5j92"><span style="font-weight:inherit;font-style:inherit;color:#000;background-color:#FFF">-0.0169</span></td>
+				<td class="tg-5j92"><span style="font-weight:inherit;font-style:inherit;color:#000;background-color:#FFF">18.12</span></td>
+				<td class="tg-5j92"><span style="font-weight:inherit;font-style:inherit;color:#000;background-color:#FFF">&lt;.0001</span></td>
+			  </tr>
+			  <tr>
+				<td class="tg-kgx5"><span style="font-weight:bold;font-style:inherit;color:#000;background-color:#FFF">Scale</span></td>
+				<td class="tg-zxgo"><span style="font-weight:inherit;font-style:inherit;color:#000;background-color:#FFF">0</span></td>
+				<td class="tg-5j92"><span style="font-weight:inherit;font-style:inherit;color:#000;background-color:#FFF">1</span></td>
+				<td class="tg-5j92"><span style="font-weight:inherit;font-style:inherit;color:#000;background-color:#FFF">0</span></td>
+				<td class="tg-5j92"><span style="font-weight:inherit;font-style:inherit;color:#000;background-color:#FFF">1</span></td>
+				<td class="tg-5j92"><span style="font-weight:inherit;font-style:inherit;color:#000;background-color:#FFF">1</span></td>
+				<td class="tg-5j92"></td>
+				<td class="tg-4bam"></td>
+			  </tr>
+			</tbody>
+			</table>
+			<h4>Poission Regression for pictorial fixation count</h4>
+			<style type="text/css">
+				.tg  {border-collapse:collapse;border-spacing:0;}
+				.tg td{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+				  overflow:hidden;padding:10px 5px;word-break:normal;}
+				.tg th{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+				  font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
+				.tg .tg-u8wk{background-color:#ffffff;color:#000000;text-align:center;vertical-align:bottom}
+				.tg .tg-kuuz{background-color:#ffffff;color:#000000;font-weight:bold;text-align:center;vertical-align:bottom}
+				</style>
+				<table class="tg" style="undefined;table-layout: fixed; width: 424px">
+				<colgroup>
+				<col style="width: 92px">
+				<col style="width: 121px">
+				<col style="width: 200px">
+				</colgroup>
+				<tbody>
+				  <tr>
+					<th class="tg-kuuz" colspan="3">Criteria For Assessing Goodness Of Fit</th>
+				  </tr>
+				  <tr>
+					<td class="tg-kuuz" colspan="2">Log   Likelihood</td>
+					<td class="tg-u8wk">9360.1118</td>
+				  </tr>
+				  <tr>
+					<td class="tg-kuuz" colspan="2">Full   Log Likelihood</td>
+					<td class="tg-u8wk">-10802.064</td>
+				  </tr>
+				  <tr>
+					<td class="tg-kuuz" colspan="2">AIC   (smaller is better)</td>
+					<td class="tg-u8wk">21614.1284</td>
+				  </tr>
+				  <tr>
+					<td class="tg-kuuz" colspan="2">AICC   (smaller is better)</td>
+					<td class="tg-u8wk">21614.1479</td>
+				  </tr>
+				  <tr>
+					<td class="tg-kuuz" colspan="2">BIC   (smaller is better)</td>
+					<td class="tg-u8wk">21644.2918</td>
+				  </tr>
+				</tbody>
+				</table>
+				<style type="text/css">
+					.tg  {border-collapse:collapse;border-spacing:0;}
+					.tg td{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+					  overflow:hidden;padding:10px 5px;word-break:normal;}
+					.tg th{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+					  font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
+					.tg .tg-zxgo{background-color:#FFF;color:#212931;text-align:left;vertical-align:bottom}
+					.tg .tg-5j92{background-color:#FFF;color:#212931;text-align:center;vertical-align:bottom}
+					.tg .tg-7j07{background-color:#ffffff;color:#000000;font-weight:bold;text-align:left;vertical-align:bottom}
+					.tg .tg-u8wk{background-color:#ffffff;color:#000000;text-align:center;vertical-align:bottom}
+					.tg .tg-kuuz{background-color:#ffffff;color:#000000;font-weight:bold;text-align:center;vertical-align:bottom}
+					.tg .tg-kgx5{background-color:#FFF;color:#212931;font-weight:bold;text-align:left;vertical-align:bottom}
+					</style>
+					<table class="tg">
+					<tbody>
+					  <tr>
+						<th class="tg-kuuz" colspan="8">Analysis Of Maximum Likelihood Parameter Estimates</th>
+					  </tr>
+					  <tr>
+						<td class="tg-7j07" rowspan="2">Parameter</td>
+						<td class="tg-7j07" rowspan="2">DF</td>
+						<td class="tg-kuuz" rowspan="2">Estimate</td>
+						<td class="tg-kuuz" rowspan="2">Standard Error</td>
+						<td class="tg-kuuz" colspan="2" rowspan="2">Wald 95% Confidence Limits</td>
+						<td class="tg-kuuz" rowspan="2">Wald Chi-Square</td>
+						<td class="tg-kuuz" rowspan="2">Pr &gt; ChiSq</td>
+					  </tr>
+					  <tr>
+					  </tr>
+					  <tr>
+						<td class="tg-kgx5"><span style="font-weight:bold;font-style:inherit;color:#000;background-color:#FFF">Intercept</span></td>
+						<td class="tg-zxgo"><span style="font-weight:inherit;font-style:inherit;color:#000;background-color:#FFF">1</span></td>
+						<td class="tg-5j92"><span style="font-weight:inherit;font-style:inherit;color:#000;background-color:#FFF">0.2424</span></td>
+						<td class="tg-5j92"><span style="font-weight:inherit;font-style:inherit;color:#000;background-color:#FFF">0.0556</span></td>
+						<td class="tg-5j92"><span style="font-weight:inherit;font-style:inherit;color:#000;background-color:#FFF">0.1334</span></td>
+						<td class="tg-5j92"><span style="font-weight:inherit;font-style:inherit;color:#000;background-color:#FFF">0.3514</span></td>
+						<td class="tg-5j92"><span style="font-weight:inherit;font-style:inherit;color:#000;background-color:#FFF">18.99</span></td>
+						<td class="tg-5j92"><span style="font-weight:inherit;font-style:inherit;color:#000;background-color:#FFF">&lt;.0001</span></td>
+					  </tr>
+					  <tr>
+						<td class="tg-kgx5"><span style="font-weight:bold;font-style:inherit;color:#000;background-color:#FFF">pic_size</span></td>
+						<td class="tg-zxgo"><span style="font-weight:inherit;font-style:inherit;color:#000;background-color:#FFF">1</span></td>
+						<td class="tg-5j92"><span style="font-weight:inherit;font-style:inherit;color:#000;background-color:#FFF">0.0175</span></td>
+						<td class="tg-5j92"><span style="font-weight:inherit;font-style:inherit;color:#000;background-color:#FFF">0.0007</span></td>
+						<td class="tg-5j92"><span style="font-weight:inherit;font-style:inherit;color:#000;background-color:#FFF">0.0161</span></td>
+						<td class="tg-5j92"><span style="font-weight:inherit;font-style:inherit;color:#000;background-color:#FFF">0.019</span></td>
+						<td class="tg-5j92"><span style="font-weight:inherit;font-style:inherit;color:#000;background-color:#FFF">575.41</span></td>
+						<td class="tg-5j92"><span style="font-weight:inherit;font-style:inherit;color:#000;background-color:#FFF">&lt;.0001</span></td>
+					  </tr>
+					  <tr>
+						<td class="tg-kgx5"><span style="font-weight:bold;font-style:inherit;color:#000;background-color:#FFF">page_pos</span></td>
+						<td class="tg-zxgo"><span style="font-weight:inherit;font-style:inherit;color:#000;background-color:#FFF">1</span></td>
+						<td class="tg-5j92"><span style="font-weight:inherit;font-style:inherit;color:#000;background-color:#FFF">0.1068</span></td>
+						<td class="tg-5j92"><span style="font-weight:inherit;font-style:inherit;color:#000;background-color:#FFF">0.0169</span></td>
+						<td class="tg-5j92"><span style="font-weight:inherit;font-style:inherit;color:#000;background-color:#FFF">0.0736</span></td>
+						<td class="tg-5j92"><span style="font-weight:inherit;font-style:inherit;color:#000;background-color:#FFF">0.1399</span></td>
+						<td class="tg-5j92"><span style="font-weight:inherit;font-style:inherit;color:#000;background-color:#FFF">39.81</span></td>
+						<td class="tg-5j92"><span style="font-weight:inherit;font-style:inherit;color:#000;background-color:#FFF">&lt;.0001</span></td>
+					  </tr>
+					  <tr>
+						<td class="tg-kgx5"><span style="font-weight:bold;font-style:inherit;color:#000;background-color:#FFF">page_num</span></td>
+						<td class="tg-zxgo"><span style="font-weight:inherit;font-style:inherit;color:#000;background-color:#FFF">1</span></td>
+						<td class="tg-5j92"><span style="font-weight:inherit;font-style:inherit;color:#000;background-color:#FFF">0.0015</span></td>
+						<td class="tg-5j92"><span style="font-weight:inherit;font-style:inherit;color:#000;background-color:#FFF">0.0002</span></td>
+						<td class="tg-5j92"><span style="font-weight:inherit;font-style:inherit;color:#000;background-color:#FFF">0.0011</span></td>
+						<td class="tg-5j92"><span style="font-weight:inherit;font-style:inherit;color:#000;background-color:#FFF">0.0019</span></td>
+						<td class="tg-5j92"><span style="font-weight:inherit;font-style:inherit;color:#000;background-color:#FFF">53.45</span></td>
+						<td class="tg-5j92"><span style="font-weight:inherit;font-style:inherit;color:#000;background-color:#FFF">&lt;.0001</span></td>
+					  </tr>
+					  <tr>
+						<td class="tg-kgx5"><span style="font-weight:bold;font-style:inherit;color:#000;background-color:#FFF">loreal</span></td>
+						<td class="tg-zxgo"><span style="font-weight:inherit;font-style:inherit;color:#000;background-color:#FFF">1</span></td>
+						<td class="tg-5j92"><span style="font-weight:inherit;font-style:inherit;color:#000;background-color:#FFF">-0.2873</span></td>
+						<td class="tg-5j92"><span style="font-weight:inherit;font-style:inherit;color:#000;background-color:#FFF">0.0681</span></td>
+						<td class="tg-5j92"><span style="font-weight:inherit;font-style:inherit;color:#000;background-color:#FFF">-0.4208</span></td>
+						<td class="tg-5j92"><span style="font-weight:inherit;font-style:inherit;color:#000;background-color:#FFF">-0.1538</span></td>
+						<td class="tg-5j92"><span style="font-weight:inherit;font-style:inherit;color:#000;background-color:#FFF">17.79</span></td>
+						<td class="tg-5j92"><span style="font-weight:inherit;font-style:inherit;color:#000;background-color:#FFF">&lt;.0001</span></td>
+					  </tr>
+					  <tr>
+						<td class="tg-kgx5"><span style="font-weight:bold;font-style:inherit;color:#000;background-color:#FFF">Scale</span></td>
+						<td class="tg-zxgo"><span style="font-weight:inherit;font-style:inherit;color:#000;background-color:#FFF">0</span></td>
+						<td class="tg-5j92"><span style="font-weight:inherit;font-style:inherit;color:#000;background-color:#FFF">1</span></td>
+						<td class="tg-5j92"><span style="font-weight:inherit;font-style:inherit;color:#000;background-color:#FFF">0</span></td>
+						<td class="tg-5j92"><span style="font-weight:inherit;font-style:inherit;color:#000;background-color:#FFF">1</span></td>
+						<td class="tg-5j92"><span style="font-weight:inherit;font-style:inherit;color:#000;background-color:#FFF">1</span></td>
+						<td class="tg-5j92"></td>
+						<td class="tg-u8wk">&lt;.0001</td>
+					  </tr>
+					</tbody>
+					</table>
+					<h4>Recall_accuracy Model: Binary Logit Model</h4>
+					<style type="text/css">
+						.tg  {border-collapse:collapse;border-spacing:0;}
+						.tg td{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+						  overflow:hidden;padding:10px 5px;word-break:normal;}
+						.tg th{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+						  font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
+						.tg .tg-u8wk{background-color:#ffffff;color:#000000;text-align:center;vertical-align:bottom}
+						.tg .tg-kuuz{background-color:#ffffff;color:#000000;font-weight:bold;text-align:center;vertical-align:bottom}
+						</style>
+						<table class="tg" style="undefined;table-layout: fixed; width: 402px">
+							<colgroup>
+							<col style="width: 210px">
+							<col style="width: 210px">
+							</colgroup>
+						<tbody>
+						  <tr>
+							<th class="tg-kuuz" colspan="2">Criteria For Assessing Goodness Of Fit</th>
+						  </tr>
+						  <tr>
+							<td class="tg-kuuz">Criterion</td>
+							<td class="tg-kuuz">Value</td>
+						  </tr>
+						  <tr>
+							<td class="tg-kuuz">Log Likelihood</td>
+							<td class="tg-u8wk">-2007.0494</td>
+						  </tr>
+						  <tr>
+							<td class="tg-kuuz">Full Log Likelihood</td>
+							<td class="tg-u8wk">-2007.0494</td>
+						  </tr>
+						  <tr>
+							<td class="tg-kuuz">AIC (smaller is better)</td>
+							<td class="tg-u8wk">4028.0989</td>
+						  </tr>
+						  <tr>
+							<td class="tg-kuuz">AICC (smaller is better)</td>
+							<td class="tg-u8wk">4028.1353</td>
+						  </tr>
+						  <tr>
+							<td class="tg-kuuz">BIC (smaller is better)</td>
+							<td class="tg-u8wk">4070.3277</td>
+						  </tr>
+						</tbody>
+						</table>
+						<style type="text/css">
+							.tg  {border-collapse:collapse;border-spacing:0;}
+							.tg td{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+							  overflow:hidden;padding:10px 5px;word-break:normal;}
+							.tg th{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+							  font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
+							.tg .tg-7j07{background-color:#ffffff;color:#000000;font-weight:bold;text-align:left;vertical-align:bottom}
+							.tg .tg-u8wk{background-color:#ffffff;color:#000000;text-align:center;vertical-align:bottom}
+							.tg .tg-kuuz{background-color:#ffffff;color:#000000;font-weight:bold;text-align:center;vertical-align:bottom}
+							.tg .tg-iire{background-color:#ffffff;color:#000000;text-align:left;vertical-align:bottom}
+							</style>
+							<table class="tg">
+							<tbody>
+							  <tr>
+								<th class="tg-kuuz" colspan="8">Analysis Of Maximum Likelihood Parameter Estimates</th>
+							  </tr>
+							  <tr>
+								<td class="tg-7j07" rowspan="2">Parameter</td>
+								<td class="tg-7j07" rowspan="2">DF</td>
+								<td class="tg-kuuz" rowspan="2">Estimate</td>
+								<td class="tg-kuuz" rowspan="2">Standard Error</td>
+								<td class="tg-kuuz" colspan="2" rowspan="2">Wald 95% Confidence Limits</td>
+								<td class="tg-kuuz" rowspan="2">Wald Chi-Square</td>
+								<td class="tg-kuuz" rowspan="2">Pr &gt; ChiSq</td>
+							  </tr>
+							  <tr>
+							  </tr>
+							  <tr>
+								<td class="tg-7j07">Intercept</td>
+								<td class="tg-iire">1</td>
+								<td class="tg-u8wk">-0.0658</td>
+								<td class="tg-u8wk">0.1282</td>
+								<td class="tg-u8wk">-0.317</td>
+								<td class="tg-u8wk">0.1854</td>
+								<td class="tg-u8wk">0.26</td>
+								<td class="tg-u8wk">0.6077</td>
+							  </tr>
+							  <tr>
+								<td class="tg-7j07">brand_fix</td>
+								<td class="tg-iire">1</td>
+								<td class="tg-u8wk">0.0892</td>
+								<td class="tg-u8wk">0.0165</td>
+								<td class="tg-u8wk">0.0568</td>
+								<td class="tg-u8wk">0.1216</td>
+								<td class="tg-u8wk">29.08</td>
+								<td class="tg-u8wk">&lt;.0001</td>
+							  </tr>
+							  <tr>
+								<td class="tg-7j07">pic_fix</td>
+								<td class="tg-iire">1</td>
+								<td class="tg-u8wk">0.025</td>
+								<td class="tg-u8wk">0.0083</td>
+								<td class="tg-u8wk">0.0087</td>
+								<td class="tg-u8wk">0.0413</td>
+								<td class="tg-u8wk">9.06</td>
+								<td class="tg-u8wk">0.0026</td>
+							  </tr>
+							  <tr>
+								<td class="tg-7j07">page_pos</td>
+								<td class="tg-iire">1</td>
+								<td class="tg-u8wk">0.1908</td>
+								<td class="tg-u8wk">0.0784</td>
+								<td class="tg-u8wk">0.0371</td>
+								<td class="tg-u8wk">0.3445</td>
+								<td class="tg-u8wk">5.92</td>
+								<td class="tg-u8wk">0.015</td>
+							  </tr>
+							  <tr>
+								<td class="tg-7j07">page_num</td>
+								<td class="tg-iire">1</td>
+								<td class="tg-u8wk">0.0075</td>
+								<td class="tg-u8wk">0.001</td>
+								<td class="tg-u8wk">0.0056</td>
+								<td class="tg-u8wk">0.0094</td>
+								<td class="tg-u8wk">60.54</td>
+								<td class="tg-u8wk">&lt;.0001</td>
+							  </tr>
+							  <tr>
+								<td class="tg-7j07">loreal</td>
+								<td class="tg-iire">1</td>
+								<td class="tg-u8wk">-1.2125</td>
+								<td class="tg-u8wk">0.2898</td>
+								<td class="tg-u8wk">-1.7804</td>
+								<td class="tg-u8wk">-0.6446</td>
+								<td class="tg-u8wk">17.51</td>
+								<td class="tg-u8wk">&lt;.0001</td>
+							  </tr>
+							  <tr>
+								<td class="tg-7j07">RECALL_TIME</td>
+								<td class="tg-iire">1</td>
+								<td class="tg-u8wk">-0.269</td>
+								<td class="tg-u8wk">0.038</td>
+								<td class="tg-u8wk">-0.3434</td>
+								<td class="tg-u8wk">-0.1946</td>
+								<td class="tg-u8wk">50.21</td>
+								<td class="tg-u8wk">&lt;.0001</td>
+							  </tr>
+							  <tr>
+								<td class="tg-7j07">Scale</td>
+								<td class="tg-iire">0</td>
+								<td class="tg-u8wk">1</td>
+								<td class="tg-u8wk">0</td>
+								<td class="tg-u8wk">1</td>
+								<td class="tg-u8wk">1</td>
+								<td class="tg-u8wk"></td>
+								<td class="tg-u8wk"></td>
+							  </tr>
+							</tbody>
+							</table>
+						<!-- Footer -->
+						<footer>
+					
+
+					</div>
+
+				<!-- Footer -->
+				<footer id="footer">
+					<section class="split contact">
+						<section class="alt">
+							<h3>Address</h3>
+							<p>University of Maryland, College Park<br />
+							MD,USA</p>
+						</section>
+						<section>
+							<h3>Phone</h3>
+							<p>(703) 409-6673</p>
+						</section>
+						<section>
+							<h3>Email</h3>
+							<p>vkang10@umd.edu</p>
+						</section>
+						<section>
+							<h3>Social</h3>
+							<ul class="icons alt">
+								<li><a href="#" class="icon brands alt fa-facebook-f"><span class="label">Facebook</span></a></li>
+								<li><a href="#" class="icon brands alt fa-instagram"><span class="label">Instagram</span></a></li>
+								<li><a href="https://www.linkedin.com/in/yiling-kang-09531422a/" class="icon brands fa-linkedin"><span class="label">Linkedin</span></a></li>
+								<li><a href="https://github.com/Vkang10" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
+							</ul>
+						</section>
+					</section>
+				</footer>
+
+				<!-- Copyright -->
+					<div id="copyright">
+						<ul><li>&copy; Untitled</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li></ul>
+					</div>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
