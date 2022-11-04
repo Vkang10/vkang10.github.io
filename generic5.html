@@ -1,0 +1,309 @@
+<!DOCTYPE HTML>
+<!--
+	Massively by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Projects - Yiling Kang</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<a href="index.html" class="logo">Welcome</a>
+					</header>
+
+				<!-- Nav -->
+					<nav id="nav">
+						<ul class="links">
+							<li><a href="index.html">Home</a></li>
+							<li class="active"><a href="generic.html">Projects</a></li>
+							<li><a href="elements.html">About Me</a></li>
+						</ul>
+						<ul class="icons">
+							<li><a href="https://www.linkedin.com/in/yiling-kang-09531422a/" class="icon brands fa-linkedin"><span class="label">Linkedin</span></a></li>
+							<li><a href="https://github.com/Vkang10" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+						</ul>
+					</nav>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Post -->
+							<section class="post">
+								<header class="major">
+									<h1>Coffee Makers Conjoint<br />
+									Analysis</h1>
+									<h3>(multinomial logit model)</p>
+								</header>
+								<div class="image main"><img src="images/5.jpg" alt="" /></div>
+								<h3>Executive Summary</h3>
+								<p>The main objective of this project is to help Philips Coffee Makers analyze the importance of product attributes to consumers, design a new product, and evaluate its market potential and impact on other existing products in the marketplace, especially the effects of water filters and/or an auto-grinder on increasing market share. We created a mixture multinomial logit models with different numbers of segments by using Glimmix 3 and figured out the most suitable 2-segments model by assessing BIC statistics. By interpreting estimated coefficients of various product attributes, we recommend Philips launch a new product: Philips, 15 cups, $59, without a water filter, with an auto-grinder, which will help Philips boom the market share. Besides, we also suggest Philips consider modifying the existing product from 10 cups to 5 cups after comparing the input and output.</p>
+								<h3>Introduction and Background</h3>
+								<p>Developing new products not only can be financially rewarding but also is necessary for the survival of a company. But new productions can also be very risky because new product failure rates are quite high in general. To solve this problem, conjoint analysis is a powerful research technique for identifying new product opportunities and for predicting market shares of new and existing products. Philips, as an electronic manufacturer, invested 1.8 billion in R&D in 2020 and is the Derwent TOP 100 Global innovator 8th year in a row[1]. Now it decides to design a new coffee machine and we should find out whether adding a water filter and/or an auto-grinder would increase its market share by using a commercial conjoint analysis. Besides, we also need to analyze consumer preference structures and new machine’s impact on other existing products in the marketplace. </p>
+								<h3>Data and Methodology</h3>
+								<p>We used GLIMMIX software to run and analyze data from Philips’ coffee makers. Our dataset contains five product attributes, 16 product profiles constructed based on a fractional factorial design and divided into eight blocks, each of which consisted of three alternatives, resulting in 1480 observations. Each 185 respondents had to choose an alternative from a choice set of three product profiles and to repeat the same choice task in a total of eight choice sets. In our analysis, we assumed there were five major products in the coffee maker market and used 27 variables in the dataset (the interpretations of variables and dummy variables are in Table1). As a common benchmark, the product profile “Philips, 5 cups, $79, with a water filter, without an auto-grinder” was regarded as alternative #3 in all choice sets. In this study, the effect coding method was used for the product attribute level variables, such as two dummy variables “Philips” and “Krups” were used to indicate the brand name attribute (Table 2).</p>
+								<p>To analyze the customized new product design for different users and hence to maximize Philips’ product market share, firstly, via Glimmix 3, we created a mixture multinomial logit models to determine the optimal number of segments (Table 3&4). By comparing the lowest BIC result, we found out there was the most suitable 2-segments model. Then based on the terminology that a p-value less than 0.05 signifies the significant effects on performance, we decided which attribute mattered more and which one was insignificant on product performance to customize product portfolios by adopting those attributes that are appreciated by consumers and those attributes that are not attached importance to but with minimum cost. Finally, we concluded two new product design strategies for two different segments after forecasting the market shares of the new products and their effects on existing products.</p>
+								<h3>Key Findings</h3>
+								<h4>1. There are two segments of consumers in the coffee makers’ market.</h4>
+								<p>To identify the segments of consumers that differ in the importance of various product attributes, we used mixture multinomial logit models in GLIMMIX 3, assuming one to four segments. We found out that the 2-segment model has the lowest BIC(2817.149)(Table 3&4), which means the 2-segment model is the optimal choice for this dataset. And we also found that 74.1% of the respondents belong to segment 1, while only 25.9% are assigned to segment 2, and that segment 1 is the larger consumer segment in the coffee makers' market(Table 5).</p>
+								<h4>2. All product attributes are significant for consumers in segment 1, while the brand name and water filter are not the main considerations for consumers in segment 2.</h4>
+								<p>After running mixture multinomial logit models in GLIMMIX 3, we got the coefficients of all product attribute variables, and the quantitative interpretations of all parameters are shown in Table 7.1&7.2. For segment 1, almost all p values of the product attribute variables are less than 0.05 (except Krups-1’s p value=0.0513)(Table 6), which means that all product attributes (brand name, carafe capacity, price, water filter, and auto-grinder) are statistically significant. Besides, after comparing the coefficients of different product attribute variables, we found that consumers in segment
+									1 value auto-grinder most, which has the highest coefficient of 1.12(Table 6). And they took the product attribute: without water filter as the second consideration (coefficient=0.855)(Table 6). Brand name and price have the least influence on consumers in segment 1 due to the lower coefficients.(brand(Philips-1)=0.178, price(Price59-1)=0.190) (Table 6) Thus, based on the coefficient of different product attribute variables, the optimal product design for segment 1 is: <u><b>Philips, 15 cups, $59, without a water filter, with an auto-grinder.</u></b></p>
+								<p>For segment 2, the p values of product attributes are varied: brand name and filter variables are larger than 0.05 (Philips-1= 0.405, Krups-1=0.834, Filter-1=0.655)(Table 6), implying that brand name and waiver filters are not the main considerations of this segment and that Philips can save the budget by degrading the specific product attributes. Other factors like carafe capacity, price, and auto-grinder are statistically significant with p-value less than 0.05. Among these product attributes, without an auto-grinder is the main driver with the highest coefficient of 0.698 (Table 6). What’s more, compared with the price attribute in segment 1, the price has a greater influence on consumers in segment 2, in which the price of $79 has the second-highest coefficient (0.572)(Table 6). Hence, based on the coefficient of different product attribute variables, the optimal product design for segment 2 is <u><b>Philips, 5 cups, $79, without a water filter, without an auto-grinder.</u></b></p>
+								<h4>3. Philips, 15 cups, $59, without a water filter, with an auto-grinder, new product targeting segment 1, will increase the market share to 68.8% and cut down other competitors’ by 15.65% on average.</h4>
+								<p>Based on the segments’ preferences and two optimal products above, we try to put these two new products into the market to predict their market shares and analyze their impacts on the market and other brands by using Excel. We assigned product attribute level dummy variables:1, 0 or -1 to represent the new products for segment 1 and 2, the specific X-values for the new design are shown in Table 10.
+								</p>
+								<li>New Product in Segment 1: Philips, 15 cups, $59, without a water filter, with an auto-grinder</li> 
+								<li>Product in Segment 2: Philips, 5 cups, $79, without a water filter, without an auto-grinder</li>
+								<p></p>
+								<p>Then we found that by introducing these new products, the overall market share of Philips products will grow by 458.33% compared to the current one (Table 8&9). New products in segment 1 would take a 68.8% market share much larger than before(6.1%) (Table 9), and significantly reduce the market share of other competitors by 15.65% on average. What’s more, the new product in segment 2 will increase Philip’s market share from 33.6% to 36.8%, but compared with the new product in segment 1, it has less impact on other existing products(0.83%) (Table 8&9).</p>
+								<h3>Conclusions and Recommendations</h3>
+								<p>Currently, Philips owns a market share of 6.1% in segment 1 and 33.6% in segment 2, implying that Philips has better marketing performance in segment 2 (Table 8). Based on our research, we recommend conducting different product strategies to improve Philip’s market share in both two segments, aiming at increasing the whole market volume sales of Philips.</p>
+								<h4>1. New Product Introduction Strategy for Segment 1:</h4>
+								<p>To improve sales volume, we recommend Philips launch a new product: Philips, 15 cups, $59, without a water filter, with an auto-grinder, to grab 68.8% market share in segment 1 and lower competitors’ market share by 15.65% on average (Table 9). We create a positioning statement for better marketing in the future: For Utilitarian coffee lovers (customers in segment 1, who care about the brand name, price, and multiple functions of coffee makers), Philips is the only brand among all coffee maker manufacturers that provides the coffee maker with optimum performance in a good value because Philips has the first-class carafe capacity(15 cups) and an auto-grinder with affordable price: $59.</p>
+								<h4>2. Supplementary Product Improvement Strategy for Segment 2:</h4>
+								<p>For segment 2, we recommend Philips upgrade the current Philips product by altering the carafe capability from 10 cups to 5 cups, to increase market share from 33.6% to 36.8%, and cut down other competitors’ market share by 0.83% on average (Table 8&9). However, modifying the current product only increases the market share by 3.2%, leading to a trade-off between product development cost and increased revenue. Therefore, because of the lack of information about the costs of mold uploading, manufacturing, advertising, and disposing of current product inventory, we could not give further suggestions on the supplementary product improvement strategy.</p>
+								<p>There are still some limitations to our recommendations. The new product strategy would be more reasonable if we have data from different dimensions such as manufacturing cost. What’s more, in the real market, there should be more coffee makers participating in the competition. If more competitors’ information is taken into account in this research, more accurate and persuasive advice would be given.</p>
+								<h3>Appendices</h3>
+								<span class="image fit"><img src="images/9.jpg" alt="" /></span>
+								<h4>Segment 1 – Mixture Multinomial Logit Model</h4>
+								<style type="text/css">
+									.tg  {border-collapse:collapse;border-spacing:0;}
+									.tg td{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+									  overflow:hidden;padding:10px 5px;word-break:normal;}
+									.tg th{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+									  font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
+									.tg .tg-w4ec{background-color:#ffffff;color:#111;font-weight:bold;text-align:center;vertical-align:bottom}
+									.tg .tg-wbth{background-color:#ffffff;color:#111;text-align:center;vertical-align:bottom}
+									.tg .tg-10wa{background-color:#ffffff;color:#111;font-weight:bold;text-align:left;vertical-align:bottom}
+									</style>
+									<table class="tg" style="undefined;table-layout: fixed; width: 540px">
+									<colgroup>
+									<col style="width: 101px">
+									<col style="width: 101px">
+									<col style="width: 101px">
+									<col style="width: 136px">
+									<col style="width: 101px">
+									</colgroup>
+									<tbody>
+									  <tr>
+										<th class="tg-10wa">VARIABLE</th>
+										<th class="tg-w4ec">Estimate</th>
+										<th class="tg-w4ec">exp(b)</th>
+										<th class="tg-w4ec">Std. Error</th>
+										<th class="tg-w4ec">T-Value</th>
+									  </tr>
+									  <tr>
+										<td class="tg-10wa">Philips-1</td>
+										<td class="tg-wbth">0.178</td>
+										<td class="tg-wbth">1.195</td>
+										<td class="tg-wbth">0.076</td>
+										<td class="tg-wbth">2.358</td>
+									  </tr>
+									  <tr>
+										<td class="tg-10wa">Krups-1</td>
+										<td class="tg-wbth">-0.19</td>
+										<td class="tg-wbth">0.824</td>
+										<td class="tg-wbth">0.1</td>
+										<td class="tg-wbth">-1.95</td>
+									  </tr>
+									  <tr>
+										<td class="tg-10wa">Capacity5-1</td>
+										<td class="tg-wbth">-0.17</td>
+										<td class="tg-wbth">0.841</td>
+										<td class="tg-wbth">0.066</td>
+										<td class="tg-wbth">-2.62</td>
+									  </tr>
+									  <tr>
+										<td class="tg-10wa">Capacity10-1</td>
+										<td class="tg-wbth">-0.32</td>
+										<td class="tg-wbth">0.725</td>
+										<td class="tg-wbth">0.082</td>
+										<td class="tg-wbth">-3.91</td>
+									  </tr>
+									  <tr>
+										<td class="tg-10wa">Price59-1</td>
+										<td class="tg-wbth">0.19</td>
+										<td class="tg-wbth">1.209</td>
+										<td class="tg-wbth">0.086</td>
+										<td class="tg-wbth">2.2</td>
+									  </tr>
+									  <tr>
+										<td class="tg-10wa">Price79-1</td>
+										<td class="tg-wbth">-0.28</td>
+										<td class="tg-wbth">0.758</td>
+										<td class="tg-wbth">0.102</td>
+										<td class="tg-wbth">-2.7</td>
+									  </tr>
+									  <tr>
+										<td class="tg-10wa">Filter-1</td>
+										<td class="tg-wbth">-0.86</td>
+										<td class="tg-wbth">0.425</td>
+										<td class="tg-wbth">0.126</td>
+										<td class="tg-wbth">-6.78</td>
+									  </tr>
+									  <tr>
+										<td class="tg-10wa">Grinder-1</td>
+										<td class="tg-wbth">1.119</td>
+										<td class="tg-wbth">3.062</td>
+										<td class="tg-wbth">0.103</td>
+										<td class="tg-wbth">10.83</td>
+									  </tr>
+									  <tr>
+										<td class="tg-w4ec" colspan="5">Segment Size=0.741</td>
+									  </tr>
+									</tbody>
+									</table>
+									<h4>Segment 2 – Mixture Multinomial Logit Model</h4>
+									<style type="text/css">
+										.tg  {border-collapse:collapse;border-spacing:0;}
+										.tg td{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+										  overflow:hidden;padding:10px 5px;word-break:normal;}
+										.tg th{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+										  font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
+										.tg .tg-w4ec{background-color:#ffffff;color:#111;font-weight:bold;text-align:center;vertical-align:bottom}
+										.tg .tg-10wa{background-color:#ffffff;color:#111;font-weight:bold;text-align:left;vertical-align:bottom}
+										.tg .tg-l96s{background-color:#FFF;color:#111;font-weight:bold;text-align:left;vertical-align:top}
+										.tg .tg-1iv5{background-color:#FFF;color:#111;text-align:center;vertical-align:top}
+										</style>
+										<table class="tg" style="undefined;table-layout: fixed; width: 540px">
+										<colgroup>
+										<col style="width: 101px">
+										<col style="width: 101px">
+										<col style="width: 101px">
+										<col style="width: 136px">
+										<col style="width: 101px">
+										</colgroup>
+										<thead>
+										  <tr>
+											<th class="tg-10wa">VARIABLE</th>
+											<th class="tg-w4ec">Estimate</th>
+											<th class="tg-w4ec">exp(b)</th>
+											<th class="tg-w4ec">Std. Error</th>
+											<th class="tg-w4ec">T-Value</th>
+										  </tr>
+										</thead>
+										<tbody>
+										  <tr>
+											<td class="tg-l96s"><span style="font-weight:bolder">Philips-1</span></td>
+											<td class="tg-1iv5">0.127</td>
+											<td class="tg-1iv5">1.135</td>
+											<td class="tg-1iv5">0.153</td>
+											<td class="tg-1iv5">0.832</td>
+										  </tr>
+										  <tr>
+											<td class="tg-l96s"><span style="font-weight:bolder">Krups-1</span></td>
+											<td class="tg-1iv5">0.032</td>
+											<td class="tg-1iv5">1.032</td>
+											<td class="tg-1iv5">0.152</td>
+											<td class="tg-1iv5">0.209</td>
+										  </tr>
+										  <tr>
+											<td class="tg-l96s"><span style="font-weight:bolder">Capacity5-1</span></td>
+											<td class="tg-1iv5">0.414</td>
+											<td class="tg-1iv5">1.512</td>
+											<td class="tg-1iv5">0.136</td>
+											<td class="tg-1iv5">3.033</td>
+										  </tr>
+										  <tr>
+											<td class="tg-l96s"><span style="font-weight:bolder">Capacity10-1</span></td>
+											<td class="tg-1iv5">0.271</td>
+											<td class="tg-1iv5">1.311</td>
+											<td class="tg-1iv5">0.127</td>
+											<td class="tg-1iv5">2.138</td>
+										  </tr>
+										  <tr>
+											<td class="tg-l96s"><span style="font-weight:bolder">Price59-1</span></td>
+											<td class="tg-1iv5">0.213</td>
+											<td class="tg-1iv5">1.237</td>
+											<td class="tg-1iv5">0.114</td>
+											<td class="tg-1iv5">1.858</td>
+										  </tr>
+										  <tr>
+											<td class="tg-l96s"><span style="font-weight:bolder">Price79-1</span></td>
+											<td class="tg-1iv5">0.572</td>
+											<td class="tg-1iv5">1.771</td>
+											<td class="tg-1iv5">0.239</td>
+											<td class="tg-1iv5">2.392</td>
+										  </tr>
+										  <tr>
+											<td class="tg-l96s"><span style="font-weight:bolder">Filter-1</span></td>
+											<td class="tg-1iv5">0.107</td>
+											<td class="tg-1iv5">1.113</td>
+											<td class="tg-1iv5">0.239</td>
+											<td class="tg-1iv5">0.447</td>
+										  </tr>
+										  <tr>
+											<td class="tg-l96s"><span style="font-weight:bolder">Grinder-1</span></td>
+											<td class="tg-1iv5">-0.698</td>
+											<td class="tg-1iv5">0.498</td>
+											<td class="tg-1iv5">0.143</td>
+											<td class="tg-1iv5">-4.870</td>
+										  </tr>
+										  <tr>
+											<td class="tg-w4ec" colspan="5">Segment Size=<span style="font-weight:bolder">0.259</span></td>
+										  </tr>
+										</tbody>
+										</table>
+										<h4>Predictions Based on Model Estimation Results (Current Product)</h4>
+										<span class="image fit"><img src="images/22.jpg" alt="" /></span>
+										<h4>Predictions Based on Model Estimation Results (Future Product)</h4>
+										<span class="image fit"><img src="images/23.jpg" alt="" /></span>
+
+					</div>
+
+				<!-- Footer -->
+				<footer id="footer">
+					<section class="split contact">
+						<section class="alt">
+							<h3>Address</h3>
+							<p>University of Maryland, College Park<br />
+							MD,USA</p>
+						</section>
+						<section>
+							<h3>Phone</h3>
+							<p>(703) 409-6673</p>
+						</section>
+						<section>
+							<h3>Email</h3>
+							<p>vkang10@umd.edu</p>
+						</section>
+						<section>
+							<h3>Social</h3>
+							<ul class="icons alt">
+								<li><a href="#" class="icon brands alt fa-facebook-f"><span class="label">Facebook</span></a></li>
+								<li><a href="#" class="icon brands alt fa-instagram"><span class="label">Instagram</span></a></li>
+								<li><a href="https://www.linkedin.com/in/yiling-kang-09531422a/" class="icon brands fa-linkedin"><span class="label">Linkedin</span></a></li>
+								<li><a href="https://github.com/Vkang10" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
+						</section>
+					</section>
+				</footer>
+
+				<!-- Copyright -->
+					<div id="copyright">
+						<ul><li>&copy; Untitled</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li></ul>
+					</div>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
