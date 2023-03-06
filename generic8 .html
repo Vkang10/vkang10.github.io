@@ -1,0 +1,190 @@
+<!DOCTYPE HTML>
+<!--
+	Massively by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Projects - Yiling Kang</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<a href="index.html" class="logo">Welcome</a>
+					</header>
+
+				<!-- Nav -->
+					<nav id="nav">
+						<ul class="links">
+							<li><a href="index.html">Home</a></li>
+							<li class="active"><a href="generic.html">Projects</a></li>
+							<li><a href="elements.html">About Me</a></li>
+						</ul>
+						<ul class="icons">
+							<li><a href="https://www.linkedin.com/in/yiling-kang-09531422a/" class="icon brands fa-linkedin"><span class="label">Linkedin</span></a></li>
+							<li><a href="https://github.com/Vkang10" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+						</ul>
+					</nav>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Post -->
+							<section class="post">
+								<header class="major">
+									<h1>Organic Effect<br />
+										On Purchase Intention</h1>
+									<h3>(A/B Test, Hypothesis Test, Python)</p>
+								</header>
+								<div class="image main"><img src="images/27.jpg" alt="" /></div>
+								<iframe src="https://docs.google.com/presentation/d/e/2PACX-1vQqjq5krjEOBLDcp6gFn_jdJJn1hc3zaxzM-IpAQY6Ge9c4oHC8yYPGtHqcpbLhiQ/embed?start=false&loop=false&delayms=3000" frameborder="0" width="900" height="550" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+								<p></p>
+								<h3>Background & Hypothesis</h3>
+								<p>The global market for organic products has been estimated at 106.4 billion euros by IFOAM Organic Internationals, where US’s market size is at 44.7 billion euros in 2019, and it has been growing at a steady pace compared to the previous year at 96.7 billion euros, and 90 billion euros in 2017. In another report by LEK consulting, it pointed out that healthy eating has been a growing trend over the last decade. More consumers have raised awareness of how their food is being produced and sent to the grocery stores. According to the survey conducted in this report in 2018, the results showed consumers had increasing demands in food claims such as Organic, NON-GMO under the natural category and fair trade-sourced, Cage-free under ethical category, or other claims including Low-fat, Low-calorie, etc. In this survey, 93% of them felt compelled to eat healthy and 63% say they try to eat healthy most. Based on these findings, we conducted a market research in which if adding organic certification on the product led to a higher purchase intention among consumers, and we evaluated other factors such as income level and utility of a certain product to a consumer.    </p>
+								<h3>Experiment Design</h3>
+								<p>In this experiment, we assumed that organic certification on the product would lead to a higher purchase intention because certification is associated with nutrition and health. Thus, our independent variable is with/ without organic certification on product packages and the dependent variable is people’s purchase intention. In the control group, we asked participants to evaluate items without organic, while participants in the treatment group evaluated items with organic certification. Except for the organic, there are other reasons that lead to higher purchase intentions such as income level and product category since people have preferred products and enough budget, which may also interact with the organic factor. As a result, We consider all these factors as covariates and try to measure the effects.</p>
+								<p>Finally, we selected 6 products in 3 groups (chicken breast, eggs and chips) representing different levels of nutrition and health to conduct the experiment. Products in each group are from the same brand, have the same size and similar package, the only difference is organic/ non-organic. Participants were randomly assigned to evaluate one product in each group by answering the same 3 questions. As we explained, organic certification represents nutrition and health, Q2 figured out the additional outcome variable, which is rating the healthiness or nutritiousness of this product in this case. Q1 & Q3 aimed to identify participants' preferences and purchase intention for the items they saw. In addition to the product questions, we set moderators as health behavior by person, which means the effect in our hypothesis only holds for people who care about health and nutrition for food, participants were asked to evaluate their personal attitude in Q10. Q11 measured the covariate: household income level of participants, we tried to explore the association between income and purchase intention. After researching reasons why people preferred organic food, we set the alternative explanation  as organic certification tends to involve environmental consciousness which leads to higher purchase intention, and asked participants to evaluate their environmental awareness level in Q12.</p>
+								<h3>Data Analysis & Key Findings</h3>
+								<p>We divided data analysis into 3 steps: descriptive analysis, statistical inference, and statistical modeling. There are 62 valid respondents in total (answer each question & no missing value). 96% of them claim they care about healthy eating and nutrition. 55% of them consider themselves as environmentalists. We split the survey data according to the control and treatment groups. A total of 186 valid answers were received. (51% in the treatment group, 49% in the control group). We then joined these datasets on 7 dimensions: experiment group, purchase intention, nutrition perception, item preference, income level, environmental awareness, and health behavior.</p>
+								<p>We generated a correlation matrix to explore the correlation among variables and run several statistical hypothesis tests to check significance, especially for the effect of organic certification on purchase intention. Since purchase intention is the special Likert scale data, we successively adopted a <b>2-sample t-test, one-way ANOVA, and Mann-Whitney test</b> to test the hypothesis. Unfortunately, we found there is no difference of purchase intention between treatment and control groups. Products with organic certification do not affect the consumer purchase intention. However, it is important to note products with organic certification will lead the consumer to perceive the product to be of higher nutritional value. This is because the organic certification allows the consumer to trust the item is of high nutrition quality. And we surprised that purchase intention has a moderate negative correlation with nutrition perception and a high negative correlation with item preference. Two-way ANOVA proves these effects are statistically significant. While Nutrition Perception has a strong positive correlation with Item Preference. We believe consumers are influenced by the concept of healthy eating, and they prefer nutritious food, but there may be other factors affect their final decisions. Organic items’ nutrition perception has a weak negative correlation with Health Behavior. Meaning people received more value of organic  items when they care about health. Also, there is an interaction effect between health behavior and item preference as health behavior has a weak negative correlation with item preference. We assume this is because someone who lives a healthier lifestyle is more picky and strict about their nutrition options. Besides, income level has a weak positive correlation with environmental awareness, but these two factors don’t have any correlations with others.</p>
+								<p>As a final step, we built ordered <b>logistical regression model</b> with purchase intention as dependent variable to quantitatively interpret the effect of potential independent variables on the odds of purchasing. We found that item preference  and health behavior are statistically significant, which mean they have effect on purchase intention. Growing up from 1 level of item preference to the next reduces the odds of purchasing by 51%. And growing up from 1 level of health behavior to the next reduces the odds of purchasing by 33%.</p>
+								<h3>Implication & Recommendations</h3>
+								<p>Nowadays, many food manufacturers market their products as organic. If we could prove organic certification on the product will lead to a higher purchase intention, we could help marketing practitioners design tailored strategies for organic foods to boost revenue. However, we obtained a series of unexpected results different from our assumptions based on data analysis. We do reflection on our research from the study design and the hypothesis itself. On one hand, we take it for granted that organic certification would arouse customers’ health awareness and lead to high purchase intention, but which might be not reflective of reality. Although organic food represents nutrition, health and quality etc., it might also be connected with high price, low cost performance and misleading advertisement in real life marketing. These negative factors would counteract the positive influence of organic certification, and lead to lower purchase intention. On the other hand, most of the participants are graduate students. These young people might prefer taste more than nutrition. Although they know organic food is nutritive, they tend to rebel against traditional health awareness in the actual purchase process. Sometimes, organic certification might even make them doubt the taste of the product and refuse to buy.</p>
+								<p>Due to the existing conclusions, we still came out with several recommendations for marketing practitioners to attract customers. Firstly, 2-sample t-test shows organic certification would lead to high nutrition perception (p=0.032<0.05)(Table 1), we recommend <b><u>setting a reasonably high price for the organic product</u></b>. A reasonably high price could make people believe more of the products’ nutritional value. On the contrary, excessively low prices might make customers question the nutritional value of the product. Secondly, a strong positive correlation between nutrition perception and item preference is proved in reliability analysis(0.738>0.6). As people prefer nutritious food, we recommend <b><u>putting the organic product in a prominent place in the store</u></b>. Although we did not prove the positive influence on purchase intention of item preference, we still believe it would help food manufacturers attract customers. To make full use of this point, <b><u>highlighting the nutrition of products in advertising</u></b> might be a good idea. Emphasizing the organic certification or nutritional value of the product in the advertisement could increase the preference for products effectively. Thirdly, compared correlation analytics on experimental group and control group, customers with high health awareness would have higher standards on products than normal customers, it is reasonable to set special sections for them. For offline shops, we could place the product in the <b><u>special organic food/ nutritious food section</u></b>. For online shops, we could add more <b><u>authoritative inbound links</u></b> targeted to this segment to support the nutrition of the product. </p>
+								<h3>APPENDICES</h3>
+								<h4>Experimental Questionnaire</h4>
+								<span class="image fit"><img src="images/28.jpg" alt="" /></span>
+								<h4>Table 1 - Statistical Inference P-value</h4>
+								<style type="text/css">
+									.tg  {border-collapse:collapse;border-spacing:0;}
+									.tg td{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+									  overflow:hidden;padding:0px 5px;word-break:normal;}
+									.tg th{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+									  font-weight:normal;overflow:hidden;padding:0px 5px;word-break:normal;}
+									.tg .tg-n6l6{background-color:#ffffff;border-color:#333333;font-weight:bold;text-align:left;vertical-align:top}
+									.tg .tg-ov6f{background-color:#ffffff;border-color:#333333;text-align:left;vertical-align:top}
+									</style>
+									<table class="tg">
+									<tbody>
+										<tr>
+											<td class="tg-n6l6">   <br><span style="color:black">Statistical Inference</span>   </td>
+											<td class="tg-n6l6">   <br><span style="color:black">Variables</td>
+											<td class="tg-n6l6">   <br><span style="color:black">P-value</td>
+										  </tr>
+									  <tr>
+										<td class="tg-ov6f">   <br>2-Sample T-test   </td>
+										<td class="tg-ov6f">   <br>Organic to Purchase Intention   </td>
+										<td class="tg-ov6f">   <br>0.47065743027333196   </td>
+									  </tr>
+									  <tr>
+										<td class="tg-ov6f">   <br><span style="color:black">one-way ANOVA</span>   </td>
+										<td class="tg-ov6f">   <br>Organic to Purchase Intention   </td>
+										<td class="tg-ov6f">   <br>0.47065743027332585   </td>
+									  </tr>
+									  <tr>
+										<td class="tg-ov6f">   <br><span style="color:black">Mann-Whitney test</span>   </td>
+										<td class="tg-ov6f">   <br>Organic to Purchase Intention   </td>
+										<td class="tg-ov6f">   <br>0.3571086327768541   </td>
+									  </tr>
+									  <tr>
+										<td class="tg-ov6f">   <br><span style="color:black">2-sample t-test</span><br>   <br><span style="color:black">（alternative=‘less’）</span>   </td>
+										<td class="tg-ov6f">   <br>Organic to Nutrition Perception   </td>
+										<td class="tg-ov6f">   <br>0.032340513679585584   </td>
+									  </tr>
+									  <tr>
+										<td class="tg-ov6f">   <br><span style="color:black">2-sample t-test</span>   </td>
+										<td class="tg-ov6f">   <br><span style="color:black">Organic to Item Preference</span>   </td>
+										<td class="tg-ov6f">   <br>0.30406232583858195   </td>
+									  </tr>
+									  <tr>
+										<td class="tg-ov6f">   <br><span style="color:black">2-sample t-test</span>   </td>
+										<td class="tg-ov6f">   <br><span style="color:black">Organic to Health Behavior</span>   </td>
+										<td class="tg-ov6f">   <br>0.16198438364797613   </td>
+									  </tr>
+									  <tr>
+										<td class="tg-ov6f">   <br><span style="color:black">two-way ANOVA</span>   </td>
+										<td class="tg-ov6f">   <br><span style="color:black">Nutrition Perception + Item Preference   to Purchase Intention</span>   </td>
+										<td class="tg-ov6f">   <br>Nurtion_Perception <br>   <br>4.099511e-01<br>   <br>Item_Preference<br>   <br>4.545456e-10   </td>
+									  </tr>
+									  <tr>
+										<td class="tg-ov6f">   <br><span style="color:black">two-way ANOVA</span>   </td>
+										<td class="tg-ov6f">   <br><span style="color:black">Health_Behavior + Item_Preference to   Nurtion_Perception</span>   </td>
+										<td class="tg-ov6f">   <br>Health_Behavior<br>   <br>9.849787e-01<br>   <br>Item_Preference<br>   <br>7.635989e-17<br>   <br>Health_Behavior:Item_Preference<br>   <br>1.597298e-02   </td>
+									  </tr>
+									  <tr>
+										<td class="tg-ov6f">   <br><span style="color:black">two-way ANOVA</span>   </td>
+										<td class="tg-ov6f">   <br><span style="color:black">Income Level to Environmental Awareness</span>   </td>
+										<td class="tg-ov6f">   <br>0.000154   </td>
+									  </tr>
+									</tbody>
+									</table>
+									<h4>Table 2 - Correlation Matrix</h4>
+									<img src="images/29.jpg" width="800"alt="" />
+									<p></p>
+									<h4>Table 3 - Coefficient Result of Ordered Logistic Regression Model</h4>
+									<img src="images/30.jpg" alt="" />
+								<!-- Footer -->
+						<footer>
+							<div class="pagination">
+								<!--<a href="#" class="previous">Prev</a>-->
+								<a href="https://github.com/Vkang10/A-B-Testing" class="next">Code</a>
+							</div>
+						</footer>
+
+					</div>
+
+				<!-- Footer -->
+				<footer id="footer">
+					<section class="split contact">
+						<section class="alt">
+							<h3>Address</h3>
+							<p>University of Maryland, College Park<br />
+							MD,USA</p>
+						</section>
+						<section>
+							<h3>Phone</h3>
+							<p>(703) 409-6673</p>
+						</section>
+						<section>
+							<h3>Email</h3>
+							<p>vkang10@umd.edu</p>
+						</section>
+						<section>
+							<h3>Social</h3>
+							<ul class="icons alt">
+								<li><a href="#" class="icon brands alt fa-facebook-f"><span class="label">Facebook</span></a></li>
+								<li><a href="#" class="icon brands alt fa-instagram"><span class="label">Instagram</span></a></li>
+								<li><a href="https://www.linkedin.com/in/yiling-kang-09531422a/" class="icon brands fa-linkedin"><span class="label">Linkedin</span></a></li>
+								<li><a href="https://github.com/Vkang10" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
+							</ul>
+						</section>
+					</section>
+				</footer>
+
+				<!-- Copyright -->
+					<div id="copyright">
+						<ul><li>&copy; Untitled</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li></ul>
+					</div>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
