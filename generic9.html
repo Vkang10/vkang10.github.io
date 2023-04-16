@@ -1,0 +1,148 @@
+<!DOCTYPE HTML>
+<!--
+	Massively by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Projects - Yiling Kang</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<a href="index.html" class="logo">Welcome</a>
+					</header>
+
+				<!-- Nav -->
+					<nav id="nav">
+						<ul class="links">
+							<li><a href="index.html">Home</a></li>
+							<li class="active"><a href="generic.html">Projects</a></li>
+							<li><a href="elements.html">About Me</a></li>
+						</ul>
+						<ul class="icons">
+							<li><a href="https://www.linkedin.com/in/yiling-kang-09531422a/" class="icon brands fa-linkedin"><span class="label">Linkedin</span></a></li>
+							<li><a href="https://github.com/Vkang10" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+						</ul>
+					</nav>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Post -->
+							<section class="post">
+								<header class="major">
+									<h1>Website Analysis</h1>
+									<h3>(MySQL)</p>
+								</header>
+								<div class="image main"><img src="images/46.jpg" alt="" /></div>
+								<h3>Database</h3>
+								<p>This project query and analyze an e-commerce website simplified database with MySQL, 
+								showing samples of website performance key metric analysis, like traffic source, channel quality, bounce rate etc.</p>
+								<div class="image main"><img src="images/45.jpg" alt="" /></div>
+								<h3>Traffic Analysis & Optimization</h3>
+								<p>Traffic source analysis aims to understand where customers come from and which channels are driving the highest quality traffic. 
+								Paid traffic commonly tags with tracking (UTM) parameters, which are appended to URLs and allow us to associate website traffic with specific sources and campaigns. 
+								By identifying top traffic sources, measuring conversion rates and analyzing trends, we could optimize bidding strategy</p>
+								<div class="image"><img src="images/47.jpg" height=200 alt="" /></div>
+								<div class="image"><img src="images/48.jpg" height=180 alt="" /></div>
+								<p>By analyzing the top ttrafffic source, we could drill deeper into gsearch nonbrand campaign traffic to explore potential optimization opportunities.
+									 As we notice sessions trend go down and break down the conversion rate by device type, 
+									 increase bids on desktop maybe helpful. 
+								</p>
+								<div class="image"><img src="images/49.jpg" height=200 alt="" /></div>
+								<div class="image"><img src="images/50.jpg" height=220 alt="" /></div>
+								<div class="image"><img src="images/51.jpg" height=280 alt="" /></div>
+								<div class="image"><img src="images/52.jpg" height=90 alt="" /></div>
+								<p></p>
+								<h3>Website Measurement & Testing</h3>
+								<p>Website content analysis focuses on understanding which pages are seen the most by users, 
+								to identify where to focus on improving business by key metrics like bounce rate and conversion rate.
+							 Here is the sample of Landing page analysis, find out the top landing page by sub-query.</p>
+							 <div class="image"><img src="images/53.jpg" height=240 alt="" /></div>
+							 <div class="image"><img src="images/54.jpg" height=180 alt="" /></div>
+								<p>High volume doesn't mean low bounce rate or high conversion rate,
+								 the most common way is setting up A/B test on live traffic and decide which version of landing page could use going forward. Here is a sample of querying bounce rate for each landing page by multiple steps using temporary tables, 
+								which is easier for others to read.</p>
+								<div class="image"><img src="images/55.jpg" height=200 alt="" /></div>
+								<div class="image"><img src="images/56.jpg" height=280 alt="" /></div>
+								<div class="image"><img src="images/57.jpg" height=200 alt="" /></div>
+								<div class="image"><img src="images/58.jpg" height=260 alt="" /></div>
+								<div class="image"><img src="images/59.jpg" height=260 alt="" /></div>
+								<div class="image"><img src="images/60.jpg" height=80 alt="" /></div>
+								<p></p>
+								<p>Conversion funnel analysis is about understanding user’s experience on their journey toward purchasing products, 
+								which could identify most common paths customers take before purchasing and optimize critical pain points where users are abandoning.</p>
+								<li>step 1: select all pageviews for relevant sessions</li>
+								<li>step 2: identify each pageview as specific funnel step</li>
+								<li>step 3: create session-level conversion funnel view</li>
+								<li>step 4: aggregate data to access funnel performance</li>
+								<p></p>
+								<div class="image"><img src="images/61.jpg" height=700 alt="" /></div>
+								<p></p>
+								<pre><code>select 
+count(distinct case when product_made_it=1 then website_session_id else null end)/count(distinct website_session_id)as lander_ctr,
+count(distinct case when mrfuzzy_made_it=1 then website_session_id else null end)/count(distinct case when product_made_it=1 then website_session_id else null end)as product_ctr,
+count(distinct case when cart_made_it=1 then website_session_id else null end)/count(distinct case when mrfuzzy_made_it=1 then website_session_id else null end)as mrfuzzy_ctr,
+count(distinct case when shipping_made_it=1 then website_session_id else null end)/count(distinct case when cart_made_it=1 then website_session_id else null end)as cart_ctr,
+count(distinct case when billing_made_it=1 then website_session_id else null end)/count(distinct case when shipping_made_it=1 then website_session_id else null end)as shipping_ctr,
+count(distinct case when thank_made_it=1 then website_session_id else null end)/count(distinct case when billing_made_it=1 then website_session_id else null end)as billing_ctr
+from session_level_made;</code>
+<div class="image"><img src="images/62.jpg" height=80 alt="" /></div>
+					</div>
+
+				<!-- Footer -->
+				<footer id="footer">
+					<section class="split contact">
+						<section class="alt">
+							<h3>Address</h3>
+							<p>University of Maryland, College Park<br />
+							MD,USA</p>
+						</section>
+						<section>
+							<h3>Phone</h3>
+							<p>(703) 409-6673</p>
+						</section>
+						<section>
+							<h3>Email</h3>
+							<p>vkang10@umd.edu</p>
+						</section>
+						<section>
+							<h3>Social</h3>
+							<ul class="icons alt">
+								<li><a href="#" class="icon brands alt fa-facebook-f"><span class="label">Facebook</span></a></li>
+								<li><a href="#" class="icon brands alt fa-instagram"><span class="label">Instagram</span></a></li>
+								<li><a href="https://www.linkedin.com/in/yiling-kang-09531422a/" class="icon brands fa-linkedin"><span class="label">Linkedin</span></a></li>
+								<li><a href="https://github.com/Vkang10" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
+							</ul>
+						</section>
+					</section>
+				</footer>
+
+				<!-- Copyright -->
+					<div id="copyright">
+						<ul><li>&copy; Untitled</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li></ul>
+					</div>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

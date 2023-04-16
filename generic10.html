@@ -1,0 +1,164 @@
+<!DOCTYPE HTML>
+<!--
+	Massively by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Projects - Yiling Kang</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<a href="index.html" class="logo">Welcome</a>
+					</header>
+
+				<!-- Nav -->
+					<nav id="nav">
+						<ul class="links">
+							<li><a href="index.html">Home</a></li>
+							<li class="active"><a href="generic.html">Projects</a></li>
+							<li><a href="elements.html">About Me</a></li>
+						</ul>
+						<ul class="icons">
+							<li><a href="https://www.linkedin.com/in/yiling-kang-09531422a/" class="icon brands fa-linkedin"><span class="label">Linkedin</span></a></li>
+							<li><a href="https://github.com/Vkang10" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+						</ul>
+					</nav>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Post -->
+							<section class="post">
+								<header class="major">
+									<h1>E-commerce A/B Testing</h1>
+									<h3>(A/B Test, Hypothesis Test, Python)</p>
+								</header>
+								<div class="image main"><img src="images/31.jpg" alt="" /></div>
+								<h3>Background</h3>
+								<p>An e-commerce company has developed a new web page and try to understand if they should implement this new page, keep the old page, or perhaps run the experiment longer to make their decision by running A/B testing.</p>
+								<h3>Experiment Design</h3>
+								<h4>1.Objective & Key Metrics</h4>
+								<p>To identify the question, the comapny try to figure out which page version is "better". We need to quantify better and translate into specific metrics. As design the new page to increase the number of users who "convert," meaning the number of users who decide to pay for the company's product, <b>user conversion</b> is the most important metric at this time. 
+									<b>So our question: Is the user conversion rate for the new page higher than the old one?</b>
+								And in this case our Variant is the new page vs. old page, and use users as Randomization units.</p>
+								</h4>
+								<h4>2.Target Population</h4>
+								<p>Another question for the expirment is that do we want to target all the users or specific segment of users. 
+								Choose the right target population is important for the a/b test, let's see one example here.
+								The demo shows an a/b testing on the check out page to figure out whether the new "similar product" feature could generate more revenue.</p>
+								<div class="image main"><img src="images/33.jpg" alt="" /></div>
+								<p>By analyzing the user journey, we could know that if we use the top of the funnel as target population, we will get most users but large proportion won't see the feature we want to test at all.
+									A more reasonable option is to consider those users who start checkout process as target population because they all will see the new feature.By analyzing the user journey, we could know that if we use the top of the funnel as target population, we will get most users but large proportion won't see the feature we want to test at all.
+									A more reasonable option is to consider those users who start checkout process as target population because they all will see the new feature.</p>
+								<h4>3.Sample Size</h4>
+								<p>We require three parameters to determine the sample size of a test</p>
+								<ol>
+									<li>Practical significance boundary: 1%</li>
+									<li>Power(1 - β) or Type II error rate β, usually β = 0.8</li>
+									<li>Significance level α, usually α = 0.05</li> 
+								</ol>
+								<div class="image main"><img src="images/34.jpg",alt="" /></div>
+								<div class="image"><img src="images/35.jpg" height=200,,alt="" /></div>
+								<p>Now we only need to find out the two parameters: 1. Sample variances can be found in the dataset. 2. The difference between treatment and control groups, which is the Practical significance boundary. 
+								And We need more samples if the sample variance is larger, and we need fewer samples if the delta is larger.</p>
+								<h4>4.Duration</h4>
+								<p>Then we need to decide how long to run the experiment, and consider at least 4 factors:</p>
+								<ol>
+									<li><b>Ramp-up plan:</b> Expose to a small population, gradually increase percentage</li>
+									<li><b>Day of week effect:</b> People behave differently weekday & weekend, recommended run experiment for >=1 week</li>
+									<li><b>Seasonality:</b> Holiday season, like Black Friday for E-commerce, data during holidays cannot be used for analysis, run experiment longer</li> 
+									<li><b>Primacy and novelty effects:</b> Users respond to changes differently</li> 
+								</ol>
+								<h3>Experiment Analysis</h3>
+								<h4>Dataset</h4>
+								<span class="image fit"><img src="images/32.jpg" alt="" /></span>
+								<h4>Check duplicate users and mismatch between group and page</h4>
+								<span class="image fit"><img src="images/36.jpg" alt="" /></span>
+								<span class="image fit"><img src="images/37.jpg" alt="" /></span>
+								<h4>User Conversion rate</h4>
+								<span class="image fit"><img src="images/38.jpg" alt="" /></span>
+								<span class="image fit"><img src="images/39.jpg" alt="" /></span>
+								<p>The plot shows that User Conversion Rate is lower in the Treatment group, but we still need to test if it's statistically significant.</p>
+								<h4>Sanity Check</h4>
+								Before we start Hypothesis Testing, we need to check Number of users assigned to groups to make sure the exprrement is reliable.
+								<span class="image fit"><img src="images/40.jpg" alt="" /></span>
+								<h4>Hypothesis Testing</h4>
+								<p>Typically, we recommended launching a change when both statistically significant and practically significant. 
+								Based on the results, the observed difference(-1.31%) in conversion rate is not statistically significant. 
+								<b>There is no real difference in performance between the two groups.</b></p>
+								<img src="images/41.jpg" width="800"alt="" />
+								<h4>Heterogeneous Treatment Effect</h4>
+								<p>In addition to the experimental results, we also want to investigate whether the treatment has different effects on different user groups. 
+								To achieve this, I conducted heterogeneity analysis by adding interaction terms between users' experimental groups and their user groups(user country) in the linear model with covariate adjustment.
+								In this project, <b>the result shows that heterogeneous treatment effect is not statistically significant.</b></p>
+								<span class="image fit"><img src="images/42.jpg" alt="" /></span>
+								<span class="image fit"><img src="images/43.jpg" alt="" /></span>
+								<h3>Recommendations</h3>
+								<p>Based on the experiment result, we should keep using the original page version and maybe run a follow-up test with more power. </p>
+								<!-- Footer -->
+						<footer>
+							<div class="pagination">
+								<!--<a href="#" class="previous">Prev</a>-->
+								<a href="https://github.com/Vkang10/A-B-Testing-2-E-commerce-Page-Analysis" class="next">Code</a>
+							</div>
+						</footer>
+
+					</div>
+
+				<!-- Footer -->
+				<footer id="footer">
+					<section class="split contact">
+						<section class="alt">
+							<h3>Address</h3>
+							<p>University of Maryland, College Park<br />
+							MD,USA</p>
+						</section>
+						<section>
+							<h3>Phone</h3>
+							<p>(703) 409-6673</p>
+						</section>
+						<section>
+							<h3>Email</h3>
+							<p>vkang10@umd.edu</p>
+						</section>
+						<section>
+							<h3>Social</h3>
+							<ul class="icons alt">
+								<li><a href="#" class="icon brands alt fa-facebook-f"><span class="label">Facebook</span></a></li>
+								<li><a href="#" class="icon brands alt fa-instagram"><span class="label">Instagram</span></a></li>
+								<li><a href="https://www.linkedin.com/in/yiling-kang-09531422a/" class="icon brands fa-linkedin"><span class="label">Linkedin</span></a></li>
+								<li><a href="https://github.com/Vkang10" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
+							</ul>
+						</section>
+					</section>
+				</footer>
+
+				<!-- Copyright -->
+					<div id="copyright">
+						<ul><li>&copy; Untitled</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li></ul>
+					</div>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
